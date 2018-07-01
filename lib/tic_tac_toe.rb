@@ -105,6 +105,6 @@ class TicTacToe
   def play
     puts "1-9"
     user_input = gets.strip
-    over?
+    !over?
   end
 end
