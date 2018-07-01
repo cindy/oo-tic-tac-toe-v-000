@@ -64,40 +64,41 @@ class TicTacToe
   end
 
   def won?
-  for comb in WIN_COMBINATIONS
-    win_1 = comb[0]
-    win_2 = comb[1]
-    win_3 = comb[2]
+    for comb in WIN_COMBINATIONS
+      win_1 = comb[0]
+      win_2 = comb[1]
+      win_3 = comb[2]
 
-    if ![@board[win_1], @board[win_2], @board[win_3]].any? { |e| e == " " }
-       if @board[win_1] == @board[win_2] && @board[win_2] == @board[win_3]
-         return comb
-       end
+      if ![@board[win_1], @board[win_2], @board[win_3]].any? { |e| e == " " }
+         if @board[win_1] == @board[win_2] && @board[win_2] == @board[win_3]
+           return comb
+         end
+      end
     end
+    false
   end
-  false
-end
 
-def full?
-  !@board.any? { |empty_spot|  empty_spot == " "}
-end
+  def full?
+    !@board.any? { |empty_spot|  empty_spot == " "}
+  end
 
-def draw?
-  full? && !won?
-end
+  def draw?
+    full? && !won?
+  end
 
-def over?(board)
-  # returns t for won, draw or full
-  draw? || full? || won?
-end
+  def over?(board)
+    # returns t for won, draw or full
+    draw? || full? || won?
+  end
 
-def winner
-  # return the char that won
-  index = won?
+  def winner
+    # return the char that won
+    index = won?
 
-  if index
-    return @board[index[0]]
-  else
-    return nil
+    if index
+      return @board[index[0]]
+    else
+      return nil
+    end
   end
 end
