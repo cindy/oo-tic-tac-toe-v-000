@@ -104,7 +104,7 @@ class TicTacToe
 
   def play
     puts "1-9"
-    user_input = gets.strip
+    # user_input = gets.strip
     if !over?
       until turn_count = 9
         turn
