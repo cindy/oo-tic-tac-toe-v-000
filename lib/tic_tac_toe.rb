@@ -40,7 +40,8 @@ class TicTacToe
   end
 
   def position_taken?(index)
-    index <= 9 && !(@board[index].nil? || @board[index] == " ")
+    if index <= 9 && index >= 0
+    return !(@board[index].nil? || @board[index] == " ")
   end
 
   def valid_move?(index)
