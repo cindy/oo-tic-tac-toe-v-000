@@ -106,7 +106,7 @@ class TicTacToe
     user_input = gets.strip
     if !over?
       until turn_count == 9
-        turn
+        turn(user_input)
       end
     end
   end
