@@ -56,8 +56,8 @@ class TicTacToe
     user_input = input_to_index(gets.split)
     if valid_move?(user_input)
       move(user_input)
-
     else
       turn
     end
+  end
 end
