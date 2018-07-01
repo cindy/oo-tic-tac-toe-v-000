@@ -88,7 +88,7 @@ class TicTacToe
 
   def over?
     # returns t for won, draw or full
-    draw? || full? || won?
+    draw? || won?
   end
 
   def winner
@@ -105,6 +105,8 @@ class TicTacToe
   def play
     puts "1-9"
     user_input = gets.strip
+    if over?
+
     until turn_count = 9
       turn
     end
